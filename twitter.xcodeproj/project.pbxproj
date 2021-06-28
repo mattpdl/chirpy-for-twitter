@@ -20,6 +20,7 @@
 		FD6CE711268A7529001BF39A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FD6CE710268A7529001BF39A /* README.md */; };
 		FD6CE713268A75D2001BF39A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FD6CE712268A75D1001BF39A /* .gitignore */; };
 		FD6CE715268A75F7001BF39A /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = FD6CE714268A75F7001BF39A /* .gitattributes */; };
+		FD6CE717268A7C48001BF39A /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD6CE716268A7C48001BF39A /* Keys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		FD6CE710268A7529001BF39A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FD6CE712268A75D1001BF39A /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		FD6CE714268A75F7001BF39A /* .gitattributes */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
+		FD6CE716268A7C48001BF39A /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			children = (
 				FD6CE714268A75F7001BF39A /* .gitattributes */,
 				FD6CE712268A75D1001BF39A /* .gitignore */,
+				FD6CE716268A7C48001BF39A /* Keys.plist */,
 				FD6CE710268A7529001BF39A /* README.md */,
 				6AD278D720BC4B950085BC29 /* twitter */,
 				6AD278D620BC4B950085BC29 /* Products */,
@@ -178,7 +181,7 @@
 		6AD278CD20BC4B950085BC29 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "Emerson Malca";
 				TargetAttributes = {
 					6AD278D420BC4B950085BC29 = {
@@ -213,6 +216,7 @@
 				FD6CE715268A75F7001BF39A /* .gitattributes in Resources */,
 				6AD278E520BC4B970085BC29 /* LaunchScreen.storyboard in Resources */,
 				6AD278E220BC4B970085BC29 /* Assets.xcassets in Resources */,
+				FD6CE717268A7C48001BF39A /* Keys.plist in Resources */,
 				FD6CE711268A7529001BF39A /* README.md in Resources */,
 				6AD278E020BC4B950085BC29 /* Main.storyboard in Resources */,
 			);
@@ -303,6 +307,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -328,7 +333,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -361,6 +366,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -380,7 +386,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
