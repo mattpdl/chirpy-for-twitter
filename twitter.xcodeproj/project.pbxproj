@@ -17,6 +17,7 @@
 		6AD278F620BCB68B0085BC29 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD278F520BCB68B0085BC29 /* APIManager.m */; };
 		6AD2790620BCC0380085BC29 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD2790520BCC0380085BC29 /* LoginViewController.m */; };
 		6AD2790920BCC04D0085BC29 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD2790820BCC04D0085BC29 /* TimelineViewController.m */; };
+		FD18BA37268BDB86001EC35B /* TweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD18BA36268BDB86001EC35B /* TweetCell.m */; };
 		FD6CE711268A7529001BF39A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FD6CE710268A7529001BF39A /* README.md */; };
 		FD6CE713268A75D2001BF39A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FD6CE712268A75D1001BF39A /* .gitignore */; };
 		FD6CE715268A75F7001BF39A /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = FD6CE714268A75F7001BF39A /* .gitattributes */; };
@@ -45,6 +46,8 @@
 		6AD2790720BCC04D0085BC29 /* TimelineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
 		6AD2790820BCC04D0085BC29 /* TimelineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
 		75895B6507775E8AFBEEA2D9 /* Pods-twitter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twitter/Pods-twitter.debug.xcconfig"; sourceTree = "<group>"; };
+		FD18BA35268BDB86001EC35B /* TweetCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TweetCell.h; sourceTree = "<group>"; };
+		FD18BA36268BDB86001EC35B /* TweetCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TweetCell.m; sourceTree = "<group>"; };
 		FD6CE710268A7529001BF39A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FD6CE712268A75D1001BF39A /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		FD6CE714268A75F7001BF39A /* .gitattributes */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
@@ -140,6 +143,8 @@
 		6AD278FF20BCBF280085BC29 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FD18BA35268BDB86001EC35B /* TweetCell.h */,
+				FD18BA36268BDB86001EC35B /* TweetCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD18BA37268BDB86001EC35B /* TweetCell.m in Sources */,
 				6AD278F320BCA6020085BC29 /* BDBOAuth1SessionManager+SFAuthenticationSession.m in Sources */,
 				FD6CE71A268AC74F001BF39A /* User.m in Sources */,
 				6AD278E820BC4B970085BC29 /* main.m in Sources */,
