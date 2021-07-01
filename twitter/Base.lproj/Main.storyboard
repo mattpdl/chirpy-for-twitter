@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -189,7 +190,14 @@
                             <constraint firstItem="Zad-sb-6uy" firstAttribute="top" secondItem="qax-2F-Vhk" secondAttribute="top" id="utU-Fd-O83"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home Timeline" id="MOc-fV-EZE"/>
+                    <navigationItem key="navigationItem" title="Home Timeline" id="MOc-fV-EZE">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="edit-icon" id="wN5-Cg-ppy">
+                            <color key="tintColor" name="AccentColor"/>
+                            <connections>
+                                <segue destination="d7n-tS-Ycp" kind="presentation" id="PAw-5S-6LS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Zad-sb-6uy" id="0eF-Mw-lWo"/>
                     </connections>
@@ -197,6 +205,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQh-hN-GQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1660" y="36.431784107946029"/>
+        </scene>
+        <!--Compose View Controller-->
+        <scene sceneID="KxD-xV-J7b">
+            <objects>
+                <viewController id="1GP-4Z-9v1" customClass="ComposeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XFV-qm-WB3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lPG-8i-ovn">
+                                <rect key="frame" x="16" y="72" width="343" height="559"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's on your mind?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gy1-Rt-Qwc">
+                                <rect key="frame" x="20" y="81" width="187" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <color key="textColor" systemColor="placeholderTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="frJ-RU-ha1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="frJ-RU-ha1" firstAttribute="trailing" secondItem="lPG-8i-ovn" secondAttribute="trailing" constant="16" id="CKa-fc-iXn"/>
+                            <constraint firstItem="lPG-8i-ovn" firstAttribute="top" secondItem="frJ-RU-ha1" secondAttribute="top" constant="16" id="Is2-is-S06"/>
+                            <constraint firstItem="Gy1-Rt-Qwc" firstAttribute="top" secondItem="lPG-8i-ovn" secondAttribute="top" constant="9" id="LjD-Cq-5rC"/>
+                            <constraint firstItem="lPG-8i-ovn" firstAttribute="leading" secondItem="frJ-RU-ha1" secondAttribute="leading" constant="16" id="UY9-7U-eXC"/>
+                            <constraint firstItem="Gy1-Rt-Qwc" firstAttribute="leading" secondItem="lPG-8i-ovn" secondAttribute="leading" constant="4" id="hoq-pt-zlH"/>
+                            <constraint firstItem="frJ-RU-ha1" firstAttribute="bottom" secondItem="lPG-8i-ovn" secondAttribute="bottom" constant="16" id="ibE-E8-ctJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ocJ-nX-dcR">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="close-icon" id="TwS-ns-qgp">
+                            <color key="tintColor" name="AccentColor"/>
+                            <connections>
+                                <action selector="didTapClose:" destination="1GP-4Z-9v1" id="lpg-Tb-Cb6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="paperplane" catalog="system" id="cEd-3S-f6S">
+                            <color key="tintColor" name="AccentColor"/>
+                            <connections>
+                                <action selector="didTapPost:" destination="1GP-4Z-9v1" id="Cfx-da-N3e"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="composeTextView" destination="lPG-8i-ovn" id="cUh-5W-pa1"/>
+                        <outlet property="placeholderLabel" destination="Gy1-Rt-Qwc" id="GZf-OI-0wd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="30n-BE-6bB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1660" y="805.54722638680664"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WUT-Ke-VeR">
@@ -216,14 +280,41 @@
             </objects>
             <point key="canvasLocation" x="860" y="36.431784107946029"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1bc-F3-fqQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d7n-tS-Ycp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HdK-yP-ldq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1GP-4Z-9v1" kind="relationship" relationship="rootViewController" id="oec-6s-WUu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OhY-Af-iPZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="860" y="806"/>
+        </scene>
     </scenes>
     <resources>
         <image name="TwitterLogoBlue" width="200" height="200"/>
+        <image name="close-icon" width="26" height="24"/>
+        <image name="edit-icon" width="30" height="27"/>
         <image name="favor-icon" width="30" height="30"/>
+        <image name="paperplane" catalog="system" width="128" height="118"/>
         <image name="reply-icon" width="30" height="30"/>
         <image name="retweet-icon" width="30" height="30"/>
+        <namedColor name="AccentColor">
+            <color red="0.11372549019607843" green="0.63137254901960782" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="placeholderTextColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
