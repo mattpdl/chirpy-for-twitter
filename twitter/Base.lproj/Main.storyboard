@@ -122,6 +122,9 @@
                                                     <state key="normal" title="Like" image="favor-icon">
                                                         <color key="titleColor" systemColor="labelColor"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="didTapFavorite:" destination="akJ-rj-rnV" eventType="touchUpInside" id="4JF-rb-5zL"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cyy-IE-P2m">
                                                     <rect key="frame" x="177" y="69" width="91" height="30"/>
@@ -172,8 +175,11 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dateLabel" destination="sGi-uv-aX8" id="z8T-ft-uNT"/>
+                                            <outlet property="likeButton" destination="NtO-Jr-lwW" id="5yR-o4-YBA"/>
                                             <outlet property="nameLabel" destination="4VA-6Q-yfQ" id="oVb-G4-fAo"/>
                                             <outlet property="profileView" destination="sUI-zw-cFi" id="SdK-ko-JzI"/>
+                                            <outlet property="replyButton" destination="1Mr-zs-aad" id="yTN-KP-M5C"/>
+                                            <outlet property="retweetButton" destination="Cyy-IE-P2m" id="lG2-aK-2Cq"/>
                                             <outlet property="screenNameLabel" destination="XtT-In-G1n" id="7rp-CD-0Zs"/>
                                             <outlet property="tweetLabel" destination="CPv-sG-HAc" id="GDK-9b-1yf"/>
                                         </connections>

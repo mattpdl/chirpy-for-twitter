@@ -106,19 +106,8 @@
     Tweet *tweet = self.arrayOfTweets[indexPath.row];
     
     // Set tweet labels
-    cell.nameLabel.text = tweet.user.name;
-    cell.screenNameLabel.text = [NSString stringWithFormat:@"@%@", tweet.user.screenName];
-    cell.dateLabel.text = tweet.createdAtString;
-    cell.tweetLabel.text = tweet.text;
-    
-    // Get profile image url
-    NSString *URLString = tweet.user.profilePicture;
-    NSURL *url = [NSURL URLWithString:URLString];
-    NSData *urlData = [NSData dataWithContentsOfURL:url];
-    
-    // Set profile image
-    cell.profileView.image = nil;
-    cell.profileView.image = [UIImage imageWithData:urlData];
+    cell.tweet = tweet;
+    [cell refreshData];
     
     return cell;
 }

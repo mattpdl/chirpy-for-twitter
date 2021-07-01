@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Tweet.h"
+#import "APIManager.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,9 +19,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *screenNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *tweetLabel;
+@property (weak, nonatomic) IBOutlet UIButton *replyButton;
+@property (weak, nonatomic) IBOutlet UIButton *retweetButton;
+@property (weak, nonatomic) IBOutlet UIButton *likeButton;
 
 // Tweet property
 @property (strong, nonatomic) Tweet *tweet;
+
+// Methods
+- (void)refreshData;
 
 @end
 
