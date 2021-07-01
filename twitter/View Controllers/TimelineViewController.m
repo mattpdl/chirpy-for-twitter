@@ -44,7 +44,6 @@
 }
 
 - (void)loadTweets {
-    
     // Request new tweets
     [[APIManager shared] getHomeTimelineWithCompletion:^(NSMutableArray *tweets, NSError *error) {
         
@@ -62,7 +61,6 @@
 }
 
 - (void)beginRefresh:(UIRefreshControl *)refreshControl {
-    
     // Request new tweets and update tableView
     [self loadTweets];
 

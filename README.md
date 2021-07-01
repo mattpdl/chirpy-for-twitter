@@ -1,6 +1,6 @@
 # Project 3 - *Twitter*
 
-**Chirpy** is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
+**Chirpy** is a basic twitter app to read and compose tweets with the [Twitter API](https://apps.twitter.com/).
 
 Time spent: **TBD** hours spent in total
 
@@ -69,7 +69,7 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2021 Matthew Ponce de Leon
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
