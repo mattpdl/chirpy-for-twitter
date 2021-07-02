@@ -142,8 +142,9 @@
     NSURL *url = [NSURL URLWithString:URLString];
     NSData *urlData = [NSData dataWithContentsOfURL:url];
     
-    // Set profile image with URL
-    self.profileView.image = nil;
+    // Set profile image with URL and make circular
+    [self.profileView.layer setCornerRadius:self.profileView.frame.size.height / 2];
+    [self.profileView.layer setMasksToBounds:YES];
     self.profileView.image = [UIImage imageWithData:urlData];
 }
 

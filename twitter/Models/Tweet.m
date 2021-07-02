@@ -6,6 +6,7 @@
 //  Copyright © 2021 Emerson Malca. All rights reserved.
 //
 
+#import "DateTools.h"
 #import "Tweet.h"
 #import "User.h"
 
@@ -13,9 +14,9 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
      self = [super init];
+    
      if (self) {
-
-         // Is this a re-tweet?
+         // Extract original tweet from retweet, if necessary
          NSDictionary *originalTweet = dictionary[@"retweeted_status"];
          if(originalTweet != nil){
              NSDictionary *userDictionary = dictionary[@"user"];
@@ -24,30 +25,28 @@
              // Change tweet to original tweet
              dictionary = originalTweet;
          }
+         
          self.idStr = dictionary[@"id_str"];
-         self.text = dictionary[@"full_text"];
+         self.text = dictionary[@"full_text"] ? dictionary[@"full_text"] : dictionary[@"text"];
          self.favoriteCount = [dictionary[@"favorite_count"] intValue];
          self.favorited = [dictionary[@"favorited"] boolValue];
          self.retweetCount = [dictionary[@"retweet_count"] intValue];
          self.retweeted = [dictionary[@"retweeted"] boolValue];
          
-         // initialize user
+         // Initialize user
          NSDictionary *user = dictionary[@"user"];
          self.user = [[User alloc] initWithDictionary:user];
 
-         // Format createdAt date string
+         // Parse created_at date string as NSDate
          NSString *createdAtOriginalString = dictionary[@"created_at"];
          NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-         // Configure the input format to parse the date string
          formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
-         // Convert String to Date
          NSDate *date = [formatter dateFromString:createdAtOriginalString];
-         // Configure output format
-         formatter.dateStyle = NSDateFormatterShortStyle;
-         formatter.timeStyle = NSDateFormatterNoStyle;
-         // Convert Date to String
-         self.createdAtString = [formatter stringFromDate:date];
+         
+         // Convert date to string with "short time ago" format
+         self.createdAtString = date.shortTimeAgoSinceNow;
      }
+    
      return self;
  }
 
