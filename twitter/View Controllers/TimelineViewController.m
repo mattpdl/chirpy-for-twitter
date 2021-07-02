@@ -10,6 +10,7 @@
 #import "APIManager.h"
 #import "AppDelegate.h"
 #import "ComposeViewController.h"
+#import "DetailsViewController.h"
 #import "LoginViewController.h"
 #import "TweetCell.h"
 
@@ -41,6 +42,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)didTapLogout:(id)sender {
+    [self logoutUser];
 }
 
 - (void)loadTweets {
@@ -89,12 +94,27 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    UINavigationController *navigationController = [segue destinationViewController];
-    ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
+    // Open tweet compose view
+    if ([segue.identifier isEqual:@"ComposeView"]) {
+        // Get the new view controller using [segue destinationViewController]
+        UINavigationController *navigationController = [segue destinationViewController];
+        ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
+        
+        // Pass the delegate object to the compose view controller
+        composeController.delegate = self;
+    }
     
-    // Pass the selected object to the new view controller.
-    composeController.delegate = self;
+    // Open tweet details
+    else {
+        // Determine which tweet was tapped
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        Tweet *tweet = self.arrayOfTweets[indexPath.row];
+        
+        // Pass the tweet to the details view controller
+        DetailsViewController *detailsViewController = [segue destinationViewController];
+        detailsViewController.tweet = tweet;
+    }
 }
 
 
